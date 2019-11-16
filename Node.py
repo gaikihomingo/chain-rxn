@@ -96,23 +96,3 @@ class Node:
             self.current_color = None
             for node in adjacent_nodes:
                 node.split_if_full()
-
-    def get_adjacent_node_coordinates(self):
-        if self.type == 'top_left':
-            return [(1, 0), (0, 1)]
-        elif self.type == 'top_right':
-            return [(self.x-1, 0), (self.x, 1)]
-        elif self.type == 'bottom_left':
-            return [(0, self.y-1), (1, self.y)]
-        elif self.type == 'bottom_right':
-            return [(self.x-1, self.y), (self.x, self.y-1)]
-        elif self.type == 'left_edge':
-            return [(0, self.y-1), (0, self.y+1), (1, self.y)]
-        elif self.type == 'right_edge':
-            return [(self.x, self.y-1), (self.x, self.y+1), (self.x-1, self.y)]
-        elif self.type == 'top_edge':
-            return [(self.x-1, 0), (self.x+1, 0), (self.x, 1)]
-        elif self.type == 'bottom_edge':
-            return [(self.x-1, self.y), (self.x+1, self.y), (self.x, self.y-1)]
-        elif self.type == 'box':
-            return [(self.x, self.y-1), (self.x, self.y+1), (self.x-1, self.y), (self.x+1, self.y)]
